@@ -23,6 +23,7 @@ export class AppComponent {
   async transformData(){
     const data = await this.dataServ.getData()
     const tempArray: TempTime[] = this.processingServ.getTempArrayFromHourlyData(data.hourly);
+    console.log(tempArray);
     const maxTempTime: TempTime = this.processingServ.getMaxTemp(tempArray);
     const minTempTime: TempTime = this.processingServ.getMinTemp(tempArray);
     const tempMean: number = this.processingServ.getTempMean(tempArray);
